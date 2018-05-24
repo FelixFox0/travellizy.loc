@@ -1,14 +1,15 @@
 <?php
-$start = microtime(true);
+
 require_once('parser.php');
 $parser = new Parser;
 if($argv != NULL){
     $parser->url = $argv[1];
-}else{
+}elseif(isset($_POST['url'])){
     $parser->url = filter_input(INPUT_POST,'url');
 }
 
-
-if($error = $parser->index()){
+if($error = $parser->validate()){
     echo $error;
+}else{
+    $parser->index();
 }
