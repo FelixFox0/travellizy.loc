@@ -1,5 +1,4 @@
 <?php
-
 require_once('parser.php');
 $parser = new Parser;
 if($argv != NULL){

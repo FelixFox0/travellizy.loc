@@ -15,7 +15,7 @@ class parser
     function validate()
     {
         if (!$fp = curl_init($this->url)) return "Ошибка чтения сайта";
-        return true;
+        return false;
     }
     
     public function createHtmlFiles()
